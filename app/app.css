@@ -57,6 +57,23 @@ i{
   margin-right: 10%;
   /*border: 2px solid green;*/
 }
+.panel{
+  width: 50%;
+  text-align: left;
+}
+.input-group{
+  position: absolute;
+  bottom: 0;
+}
+.left{
+  float: left;
+}
+.right{
+  float: right;
+}
+a.right{
+  font-size: 12px;
+}
 
 @media (max-width: 767px) {
   .contacts{

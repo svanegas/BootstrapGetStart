@@ -2,16 +2,14 @@
   "name": "bootstrapgetstart",
   "version": "1.0.0",
   "description": "project to learn bootstrap",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+  "main": "app.js",
   "author": "carop",
   "license": "ISC",
   "devDependencies": {
     "connect-livereload": "^0.5.4",
     "gulp": "^3.9.0",
-    "gulp-express": "^0.3.5"
+    "gulp-express": "^0.3.5",
+    "wiredep": "^3.0.0"
   },
   "engines": {
     "npm": "3.5.2"

@@ -1,0 +1,15 @@
+{
+  "name": "BootstrapGetStart",
+  "authors": [
+    "Carolina Penagos"
+  ],
+  "description": "project to learn bootstrap",
+  "main": "app.js",
+  "moduleType": [],
+  "license": "MIT",
+  "homepage": "",
+  "dependencies": {
+    "bootstrap": "3.3.6",
+    "jquery": "2.1.4"
+  }
+}

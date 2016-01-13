@@ -1,130 +1,136 @@
-nav{
-  position: fixed;
-}
-.navbar {
-  margin: 0 0 0 0px;
-  padding-top: 0px;
-  width: 100%;
-  background: #5cb85c;
-}
-.nav li a.option{
-  color: #444;
-  font-size: 20px;
-}
-.navbar-brand {
-  padding-top: 8px;
-}
-i{
-  color: #000;
-}
-.the-chat{
-}
-.person{
-  position:absolute;
-  margin-left: 10%;
-  width: 80%;
-  height: 70px;
-  background: #ccc;
-  text-align: center;
-/*  border: 2px solid red;*/
-}
-.contacts{
-  width: 20%;
-  background: #eee;
-  position: absolute;
-  height: 85.4%;
-  bottom: 0;
-  text-align: center;
-  margin-left: 10%;
-  /*border: 2px solid blue;*/
-}
-.contacts h3{
-  margin-bottom: 10%;
-}
-.well{
-  margin-bottom: 1px;
-  background: #fff;
-}
-.chats{
-  float: right;
-  width: 60%;
-  right: 0;
-  background: #ddd;
-  position: absolute;
-  height: 85.4%; /* sin nav 91.7%*/
-  bottom: 0;
-  text-align: center;
-  margin-right: 10%;
-  /*border: 2px solid green;*/
-}
-.panel{
-  width: 50%;
-  text-align: left;
-}
-.input-group{
-  position: absolute;
-  bottom: 0;
-}
-.left{
-  float: left;
-}
-.right{
-  float: right;
-}
-a.right{
-  font-size: 12px;
+@import "../../../bower_components/bootstrap/less/bootstrap.less";
+@import "./variables.less";
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  -webkit-font-smoothing: antialiased;
 }
 
-@media (max-width: 767px) {
-  .contacts{
-    margin-left: 5%;
-    width: 20%;
-  }
-  .chats{
-    width: 70%;
-    margin-right: 5%;
-  }
-  .person{
-    width: 90%;
-    margin-left:5%;
+.btn-success {
+  background-color: @success-color;
+  border-color: @success-color;
+  &:hover {
+    background-color: darken(@success-color, 15%);
+    border-color: darken(@success-color, 15%);
   }
 }
-@media (max-width: 667px) {
-  .contacts{
-    margin-left: 0%;
-    width: 30%;
-  }
-  .chats{
-    width: 70%;
-    margin-right: 0%;
-  }
-  .person{
-    width: 100%;
-    margin-left:0%;
-  }
+
+.navbar-default {
+  background-color: @navbar-color;
+  color: @navbar-items-color;
+  height: 70px;
+  margin: 0px;
 }
-@media (max-width: 800px) {
-  .navbar-header {
-    float: none;
-  }
+
+.navbar-header {
   .navbar-toggle {
-    display: inline;
+    margin-top: 15px;
   }
-  .navbar-collapse {
-    border-top: 1px solid transparent;
-    box-shadow: inset 0 1px 0 rgba(255,255,255,0.1);
+}
+
+.navbar-right {
+  li {
+    a {
+      margin: 0px 0px;
+      padding: 25px 25px 24px 25px;
+      cursor: pointer;
+    }
+    button {
+      margin: 18px 25px;
+    }
+    .dropdown-menu {
+      width: 200px;
+      padding: 0px;
+      text-align: center;
+      border-style: none;
+      box-shadow: 0px 0px 0px @btn-shadow-color;
+      left: -50px;
+      background-color: @dropdown-item-bg-color;
+      border-bottom-left-radius: @dropdown-border-radius;
+      border-bottom-right-radius: @dropdown-border-radius;
+      li {
+        a {
+          color: @navbar-items-color;
+          padding: 15px 0px;
+          margin: 0px;
+          border-top: 1px solid #d5d5d5;
+          &:hover {
+            background-color: @dropdown-item-bg-color-hover;
+          }
+        }
+        &:last-child {
+          a {
+            &:hover {
+              border-bottom-left-radius: @dropdown-border-radius;
+              border-bottom-right-radius: @dropdown-border-radius;
+            }
+          }
+        }
+      }
+
+    }
   }
-  .navbar-collapse.collapse {
-    display: none!important;
+}
+
+.navbar-btn {
+  width: 110px;
+  box-shadow: 1px 1px 5px @btn-shadow-color;
+}
+
+.banner {
+  min-height: 600px;
+  background-image: url('../../../img/img-banner-home.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  .banner-title {
+    text-align: center;
+    margin-top: 120px;
+    margin-bottom: 50px;
+    color: @head-text-color;
+    font-weight: 100;
+    font-size: 50px;
+    line-height: 55px;
   }
-  .navbar-nav {
-    float: right!important;
-    margin-top: 7.5px;
-  }
-  .navbar-nav>li {
-    float: left;
-  }
-  .collapse.in{
-    display:block !important;
+  .banner-input-wrapper {
+    // margin: 0px 30px;
+    height: 65px;
+    background-color: fade(@head-input-bg-color, @head-input-bg-fade);
+    color: @head-input-color;
+    font-size: 20px;
+    .banner-input-icon {
+      position: absolute;
+      margin-left: 22.5px;
+      margin-top: 22.5px;
+    }
+    .banner-input {
+      width: 100%;
+      height: 100%;
+      background-color: inherit;
+      border: 2px solid @head-input-color;
+      padding: 0px 70px;
+      &::-webkit-input-placeholder {
+        color: fade(@head-input-color, 80%);
+      }
+      &:-moz-placeholder {
+        color: fade(@head-input-color, 80%);
+      }
+      &::-moz-placeholder {
+        color: fade(@head-input-color, 80%);
+      }
+      &:-ms-input-placeholder {
+        color: fade(@head-input-color, 80%);
+      }
+    }
+    .banner-input-send {
+      font-weight: 100;
+      position: absolute;
+      right: 15px;
+      padding: 22.5px;
+      cursor: pointer;
+      &:hover {
+        color: darken(@head-input-color, 15%);
+      }
+    }
   }
 }

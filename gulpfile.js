@@ -55,7 +55,7 @@ var lessAndReload = function(event) {
 gulp.task('watch', function () {
   gulp.watch(['./app/**/*.html'], server.notify);
   gulp.watch(['./app/scripts/**/*.js'], server.notify);
-  gulp.watch(['./app/styles/**/*.less'], lessAndReload);
+  gulp.watch(['./app/styles/less/**/*.less'], lessAndReload);
   gulp.watch(['./server/**/*.js'], server.notify);
 });
 

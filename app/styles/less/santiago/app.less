@@ -85,30 +85,59 @@ body {
   background-position: center;
   .banner-title {
     text-align: center;
-    margin-top: 120px;
-    margin-bottom: 50px;
     color: @head-text-color;
     font-weight: 100;
-    font-size: 50px;
-    line-height: 55px;
+    margin-top: 70px;
+    margin-bottom: 60px;
+    font-size: 35px;
+    line-height: 40px;
+    @media (min-width: @screen-sm-min) {
+      margin-top: 110px;
+      margin-bottom: 45px;
+      font-size: 40px;
+      line-height: 50px;
+    }
+    @media (min-width: @screen-md-min) {
+      margin-top: 120px;
+      margin-bottom: 50px;
+      font-size: 50px;
+      line-height: 55px;
+    }
   }
   .banner-input-wrapper {
-    // margin: 0px 30px;
-    height: 65px;
     background-color: fade(@head-input-bg-color, @head-input-bg-fade);
     color: @head-input-color;
-    font-size: 20px;
+    height: 50px;
+    margin: 0px 0px;
+    font-size: 15px;
+    @media (min-width: @screen-sm-min) {
+      height: 65px;
+      margin: 0px @head-input-margin / 2;
+      font-size: 20px;
+    }
+    @media (min-width: @screen-md-min) {
+      height: 65px;
+      margin: 0px @head-input-margin;
+      font-size: 20px;
+    }
     .banner-input-icon {
       position: absolute;
-      margin-left: 22.5px;
-      margin-top: 22.5px;
+      margin-left: 17.5px;
+      margin-top: 17.5px;
+      @media (min-width: @screen-sm-min) {
+        margin-left: 22.5px;
+        margin-top: 22.5px;
+      }
     }
     .banner-input {
       width: 100%;
       height: 100%;
       background-color: inherit;
       border: 2px solid @head-input-color;
-      padding: 0px 70px;
+      padding: 0px 50px;
+      @media (min-width: @screen-sm-min) {
+        padding: 0px 70px;
+      }
       &::-webkit-input-placeholder {
         color: fade(@head-input-color, 80%);
       }
@@ -126,10 +155,410 @@ body {
       font-weight: 100;
       position: absolute;
       right: 15px;
-      padding: 22.5px;
       cursor: pointer;
+      padding: 17.5px;
+      @media (min-width: @screen-sm-min) {
+        margin-right: @head-input-margin / 2;
+        padding: 22.5px;
+      }
+      @media (min-width: @screen-md-min) {
+        margin-right: @head-input-margin;
+        padding: 22.5px;
+      }
       &:hover {
         color: darken(@head-input-color, 15%);
+      }
+    }
+  }
+  .banner-text {
+    color: @head-text-start-color;
+    font-size: 16px;
+    font-weight: 600;
+    text-align: center;
+    margin-top: 50px;
+    .banner-text-link {
+      cursor: pointer;
+      color: @head-text-start-link-color;
+      &:hover {
+        color: darken(@head-text-start-link-color, 15%);
+      }
+    }
+  }
+}
+
+.pods {
+  .pod-image {
+    min-height: 400px;
+    background-image: url('../../../img/img-mac.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+  }
+  .pod-text {
+    min-height: 400px;
+    text-align: center;
+    color: @pod-text-color;
+    .pod-title {
+      font-size: 30px;
+      font-weight: 100;
+      padding: 50px 0px 20px;
+      @media (min-width: @screen-md-min) {
+        padding: 80px 0px 30px;
+      }
+    }
+    .pod-content {
+      font-size: 16px;
+      font-weight: 100;
+      padding: 0px 10px;
+      @media (min-width: @screen-md-min) {
+        padding: 0px 50px;
+      }
+      p {
+        margin-bottom: 25px;
+      }
+    }
+    .pod-btn {
+      width: 190px;
+      height: 50px;
+      font-size: 16px;
+      font-weight: 600;
+      border: 0px none;
+      border-radius: 5px;
+    }
+    .pod-btn-gray {
+      background-color: @pod-text-btn-white-bg-color;
+      color: @pod-text-gray-bg-color;
+      &:hover {
+        background-color: mix(@pod-text-btn-white-bg-color, @pod-text-gray-bg-color, 70%);
+      }
+    }
+    .pod-btn-orange {
+      background-color: @pod-text-btn-white-bg-color;
+      color: @pod-text-orange-bg-color;
+      &:hover {
+        background-color: mix(@pod-text-btn-white-bg-color, @pod-text-orange-bg-color, 70%);
+      }
+    }
+  }
+  .pod-gray-bg {
+    background-color: @pod-text-gray-bg-color;
+  }
+  .pod-orange-bg {
+    background-color: @pod-text-orange-bg-color;
+  }
+}
+
+.icons-wrapper {
+  text-align: center;
+  color: @icons-text-color;
+  font-size: 18px;
+  .pod-icon-wrapper {
+    margin: 15px 0px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    height: 115px;
+    @media (min-width: @screen-md-min) {
+      margin: 85px 0px;
+      border-right: 1px solid @icons-separator-color;
+      &:last-child {
+        border-right: 0px;
+      }
+    }
+    .pod-icon-image {
+      margin-bottom: 15px;
+    }
+  }
+}
+
+.carousel-indicators {
+  li {
+    margin: 0px 3px;
+    border-radius: 0px;
+    width: 23px;
+    height: 6px;
+    background-color: fade(@carousel-indicator-bg-color, @carousel-indicator-fade);
+    border: 0px none;
+    &:hover:not(.active) {
+      background-color: fade(@carousel-indicator-bg-color, @carousel-indicator-fade-hover);
+    }
+  }
+  .active {
+    margin: 0px 3px;
+    width: 23px;
+    height: 6px;
+    background-color: @carousel-indicator-bg-color;
+    border: 0px none;
+    cursor: default;
+  }
+}
+
+.carousel-item {
+  min-height: 400px;
+  background-color: white;
+  text-align: center;
+  .carousel-item-img {
+    margin: 60px 0px 30px;
+  }
+  .carousel-item-title {
+    font-size: 20px;
+    color: @carousel-item-title-color;
+    margin-bottom: 10px;
+  }
+  .carousel-item-content {
+    font-size: 18px;
+    line-height: 30px;
+    color: @carousel-item-content-color;
+    @media (min-width: @screen-md-min) {
+      magin: 0px 20px;
+    }
+  }
+}
+
+.partners {
+  background-color: @partners-bg-color;
+  min-height: 400px;
+  text-align: center;
+  .row {
+    @media (min-width: @screen-md-min) {
+      margin: 0px 80px;
+    }
+  }
+  .partners-title {
+    font-size: 40px;
+    font-weight: 100;
+    color: @partners-title-color;
+    padding: 40px 0px 10px;
+    @media (min-width: @screen-md-min) {
+      padding: 120px 0px 30px;
+    }
+  }
+  .partners-image-wrapper {
+    height: 55px;
+    margin-top: 30px;
+  }
+  .partners-image {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}
+
+.plans {
+  text-align: center;
+}
+
+.pricing-title {
+  font-size: 40px;
+  padding: 50px 0px 35px;
+  color: @partners-title-color;
+  font-weight: 100;
+}
+
+.light-padding {
+  padding: 0px 5px;
+}
+
+.first-plan {
+  @media (min-width: @screen-sm-min) {
+    margin: 0px 0px 0px auto !important;
+  }
+}
+
+.plan-price {
+  padding: 30px 0px;
+  font-weight: 800;
+  font-size: 72px;
+  .currency {
+    font-weight: 100;
+    font-size: 46px;
+    position: relative;
+    bottom: 20px;
+  }
+  .period {
+    font-weight: 100;
+    font-size: 15px;
+    position: relative;
+    top: 0px;
+    right: 20px;
+  }
+}
+
+.plan-switch {
+  padding: 15px 0px;
+  .plan-option {
+    position: relative;
+    bottom: 4px;
+    font-size: 16px;
+  }
+  .toggler {
+    display: inline;
+    position: relative;
+    width: 34px;
+    height: 20px;
+    margin: 0px 10px;
+    input {
+      position: relative;
+      opacity: 0;
+      width: 34px;
+      height: 20px;
+      z-index: 5;
+      margin: 0px 0px;
+      cursor: pointer;
+      &:checked + .tg-path > .tg-ball {
+        left: 16px;
+        box-shadow: 2px 2px 10px fade(@btn-shadow-color, 70%);
+      }
+    }
+    .tg-path {
+      position: absolute;
+      top: 0px;
+      left: 0px;
+      width: 34px;
+      height: 14px;
+      border-radius: 8px;
+      background-color: @switch-bg-color;
+      transition: all 0.5s;
+      .tg-ball {
+        position: absolute;
+        top: -3px;
+        left: -3px;
+        width: 20px;
+        height: 20px;
+        border: 1px solid #aaa;
+        background: #ddd;
+        border-radius: 50%;
+        transition: all 0.5s;
+        box-shadow: -2px 2px 10px fade(@btn-shadow-color, 70%);
+      }
+    }
+  }
+}
+
+.plan {
+  border: 3px solid;
+  max-width: 320px;
+  margin: 15px auto;
+  @media (min-width: @screen-sm-min) {
+    margin: 0px 0px;
+  }
+  .plan-head {
+    color: @plan-head-color;
+    height: 140px;
+  }
+  .plan-body {
+    height: 250px;
+    .plan-mode {
+      padding-top: 20px;
+      color: @plan-gray-text-color;
+      font-size: 16px;
+    }
+    .plan-description {
+      padding-top: 25px;
+      color: @plan-gray-text-color;
+      .hint-green {
+        font-weight: 600;
+        color: @plan-green-bg-color;
+      }
+      .hint-gray {
+        font-weight: 600;
+        color: @plan-gray-bg-color;
+      }
+    }
+  }
+  .plan-footer {
+    height: 50px;
+    color: @plan-head-color;
+    font-size: 20px;
+    padding-top: 15px;
+  }
+}
+
+.tg-green {
+  input {
+    &:checked + .tg-path {
+      background-color: @switch-path-green-bg-color !important;
+      .tg-ball {
+        border: 0px none !important;
+        background-color: @switch-ball-green-bg-color !important;
+      }
+    }
+  }
+}
+
+.tg-pink {
+  input {
+    &:checked + .tg-path {
+      background-color: @switch-path-pink-bg-color !important;
+      .tg-ball {
+        border: 0px none !important;
+        background-color: @switch-ball-pink-bg-color !important;
+      }
+    }
+  }
+}
+
+.tg-blue {
+  input {
+    &:checked + .tg-path {
+      background-color: @switch-path-blue-bg-color !important;
+      .tg-ball {
+        border: 0px none !important;
+        background-color: @switch-ball-blue-bg-color !important;
+      }
+    }
+  }
+}
+
+.brd-green {
+  color: @plan-green-bg-color;
+}
+
+.brd-gray {
+  color: @plan-gray-bg-color;
+}
+
+.bg-green {
+  background-color: @plan-green-bg-color;
+}
+
+.bg-gray {
+  background-color: @plan-gray-bg-color;
+}
+
+.social-wrapper {
+  max-width: 650px;
+  color: @social-color;
+  margin: 0px auto;
+  .social-header {
+    height: 50px;
+    font-size: 20px;
+    line-height: 20px;
+    font-weight: 100;
+    text-align: left;
+    padding: 15px 15px;
+    background-color: @social-header-bg-color;
+    position: relative;
+    .social-icons {
+      position: absolute;
+      font-size: 26px;
+      top: 0px;
+      right: 0px;
+      i {
+        padding: 12px 15px 12px 5px;
+      }
+    }
+  }
+  .social-body {
+    min-height: 165px;
+    background-color: @social-body-bg-color;
+    .social-description {
+      text-align: left;
+      padding-top: 20px;
+      .plan-switch {
+        text-align: center;
+        @media (min-width: @screen-sm-min) {
+          text-align: left;
+        }
       }
     }
   }
